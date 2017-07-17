@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Card_Counter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,90 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_joker" translatesAutoresizingMaskIntoConstraints="NO" id="guM-tD-ajn">
+                                <rect key="frame" x="83" y="70" width="209" height="308"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="308" id="pKF-nW-rdz"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGH-7C-eLm">
+                                <rect key="frame" x="83" y="409" width="51" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP5-am-nIp">
+                                <rect key="frame" x="145" y="491" width="84" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Show Count"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showCountBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ym0-Va-xQV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nec-AT-Leh" userLabel="count">
+                                <rect key="frame" x="153" y="409" width="69" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="B3f-2e-8dk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFO-Qq-GoB">
+                                <rect key="frame" x="145" y="555" width="84" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Reset"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resetBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gM0-0b-L2I"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.02239884824978125" green="0.56326540762182753" blue="0.041035231305283672" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="UGH-7C-eLm" secondAttribute="trailing" constant="225" id="BQg-B7-Rov"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nec-AT-Leh" secondAttribute="trailing" constant="137" id="CWb-ia-IDA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qFO-Qq-GoB" secondAttribute="trailing" constant="130" id="Dk6-NM-7sk"/>
+                            <constraint firstItem="UGH-7C-eLm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="67" id="KON-i2-DrP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FP5-am-nIp" secondAttribute="trailing" constant="130" id="Ouc-wf-uNE"/>
+                            <constraint firstItem="qFO-Qq-GoB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="129" id="PO2-mJ-HEL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="guM-tD-ajn" secondAttribute="trailing" constant="67" id="STB-7h-GKm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qFO-Qq-GoB" secondAttribute="bottom" constant="82" id="Tom-eG-QEw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UGH-7C-eLm" secondAttribute="bottom" constant="188" id="Zay-wd-haB"/>
+                            <constraint firstItem="qFO-Qq-GoB" firstAttribute="top" secondItem="FP5-am-nIp" secondAttribute="bottom" constant="34" id="cFP-um-5lr"/>
+                            <constraint firstItem="guM-tD-ajn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="cvK-Gs-Pjk"/>
+                            <constraint firstItem="UGH-7C-eLm" firstAttribute="top" secondItem="guM-tD-ajn" secondAttribute="bottom" constant="31" id="deu-qm-tYl"/>
+                            <constraint firstItem="Nec-AT-Leh" firstAttribute="leading" secondItem="UGH-7C-eLm" secondAttribute="trailing" constant="19" id="f34-t3-Fcs"/>
+                            <constraint firstItem="FP5-am-nIp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="129" id="qjs-S7-sj6"/>
+                            <constraint firstItem="Nec-AT-Leh" firstAttribute="top" secondItem="guM-tD-ajn" secondAttribute="bottom" constant="31" id="vOq-qe-ItV"/>
+                            <constraint firstItem="guM-tD-ajn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="67" id="yik-3N-vbE"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="A7T-di-nOD"/>
+                    <connections>
+                        <outlet property="cardView" destination="guM-tD-ajn" id="W9l-af-n2B"/>
+                        <outlet property="countLbl" destination="Nec-AT-Leh" id="hqY-BM-Psh"/>
+                        <outlet property="showCountBtn" destination="FP5-am-nIp" id="EvD-Xa-jXS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="red_joker" width="500" height="726"/>
+    </resources>
 </document>
